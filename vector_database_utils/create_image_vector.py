@@ -30,7 +30,7 @@ def generate_image_embeddings(image_paths, batch_size=32):
     valid_image_paths = []
     
     for i in range(0, len(image_paths), batch_size):
-        if (i > 1000): break
+        print(i)
         batch_paths = image_paths[i:i + batch_size]
         batch_images = []
         batch_valid_paths = []
