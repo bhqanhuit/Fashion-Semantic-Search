@@ -1,0 +1,1 @@
+python inference_search.py --query "blue cowl neck maxi-dress" --top_k 5 --output_dir logs
