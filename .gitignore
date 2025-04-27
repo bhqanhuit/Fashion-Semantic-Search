@@ -8,9 +8,6 @@ __pycache__/
 *.so
 
 # images
-*.jpg
-*json
-*.csv
 
 # Distribution / packaging
 .Python
@@ -32,6 +29,7 @@ wheels/
 MANIFEST
 
 # Lightning /research  
+image_pool/
 test_tube_exp/
 tests/tests_tt_dir/
 tests/save_dir
