@@ -30,6 +30,7 @@ MANIFEST
 
 # Lightning /research  
 image_pool/
+results/
 images/
 test_tube_exp/
 tests/tests_tt_dir/
@@ -133,3 +134,4 @@ MNIST
 .DS_Store
 pretrained/finetuned_clip.pt
 vector_data/
+vector_data/image_paths.txt

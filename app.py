@@ -13,6 +13,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
 # Set device
+home_path = '/home/happyhome/Documents/Quocanh/Fashion-Semantic-Search'
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 # Initialize FastAPI app
@@ -27,7 +28,6 @@ app.add_middleware(
     allow_headers=["*"],  # Allow all headers
 )
 
-# Mount the images directory to serve images
 app.mount("/images", StaticFiles(directory="images"), name="images")
 
 # Load CLIP model and embeddings at startup
@@ -78,10 +78,10 @@ def visualize_results(query, results, output_dir='results'):
     fig, axes = plt.subplots(rows, cols, figsize=(5 * cols, 5 * rows))
     fig.suptitle(f"Search Results for Query: '{query}'", fontsize=16)
     axes = np.array(axes).flatten() if n_results > 1 else [axes]
-    
+
     for i, (img_path, score) in enumerate(results):
         try:
-            img = Image.open(img_path).convert('RGB')
+            img = Image.open(home_path + img_path).convert('RGB')
             axes[i].imshow(img)
             axes[i].set_title(f"{Path(img_path).name}\nSimilarity: {score:.4f}", fontsize=10)
             axes[i].axis('off')
