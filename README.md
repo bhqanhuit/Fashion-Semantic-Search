@@ -34,10 +34,8 @@ fashion-search-app/
   ```
 
 ## Setup Instructions
-1. **Clone or Set Up the Project Directory**:
-   Ensure your project directory matches the structure above. Place `app.py`, `index.html`, and other files in `fashion-search-app/`.
 
-2. **Verify Data Files**:
+1. **Verify Data Files**:
    - Ensure `pretrained/finetuned_clip.pt`, `vector_data/image_embeddings.npy`, and `vector_data/image_paths.txt` exist.
    - Confirm that `image_paths.txt` contains relative paths (e.g., `/images/56983.jpg`). If it contains absolute paths, run the `update_image_paths.py` script:
      ```bash
@@ -46,7 +44,7 @@ fashion-search-app/
      ```
    - Verify that the `images/` directory contains the images listed in `image_paths.txt` (e.g., `images/56983.jpg`).
 
-3. **Run the FastAPI Backend**:
+2. **Run the FastAPI Backend**:
    Start the backend server:
    ```bash
    cd fashion-search-app
@@ -61,7 +59,7 @@ fashion-search-app/
      INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
      ```
 
-4. **Serve the Frontend**:
+3. **Serve the Frontend**:
    Serve the HTML frontend using Python’s built-in HTTP server:
    ```bash
    cd fashion-search-app
