@@ -1,6 +1,6 @@
 # Fashion Semantic Search
 
-Fashion Semantic Search is a web application that allows users to search for fashion images using text queries. It leverages a fine-tuned CLIP model to perform semantic search on a pre-indexed dataset of fashion images, returning the top-k most similar images along with a visualization plot.
+Fashion Semantic Search is a web application that allows users to search for fashion images using text queries. It leverages a fine-tuned CLIP model to perform semantic search on a pre-indexed dataset of fashion images, returning the top-k most similar images along with a visualization plot. We reused the pretrained model from [OpenFashionCLIP](https://github.com/aimagelab/open-fashion-clip)
 
 ## Features
 - **Text-Based Search**: Input a query to find matching fashion images.
@@ -13,7 +13,6 @@ Fashion Semantic Search is a web application that allows users to search for fas
 fashion-search-app/
 ├── app.py                    # FastAPI backend
 ├── index.html                # Frontend HTML page
-├── update_image_paths.py     # Script to update image paths (if needed)
 ├── pretrained/
 │   └── finetuned_clip.pt     # Fine-tuned CLIP model weights
 ├── vector_data/
@@ -103,16 +102,3 @@ fashion-search-app/
      }
      ```
    - View the plot by opening `http://localhost:8000/plot/blue_cowl_neck_maxi-dress` in a browser.
-
-## Troubleshooting
-1. **Images Not Loading**:
-   - Ensure `image_paths.txt` contains relative paths (e.g., `/images/56983.jpg`).
-   - Verify that the `images/` directory contains the images listed in `image_paths.txt`.
-   - Test an image URL directly: `http://localhost:8000/images/56983.jpg`. If it returns a 404, the file is missing or the path is incorrect.
-
-2. **CORS Issues**:
-   - The backend allows all origins (`allow_origins=["*"]`). If you encounter CORS errors, restart the backend:
-     ```bash
-     pkill uvicorn
-     uvicorn app:app --host 0.0.0.0 --port 8000
-     ```
